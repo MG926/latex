@@ -1,0 +1,320 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, graphicx,listings,xcolor}
+\usepackage{amsfonts}
+
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+\usepackage{afterpage}
+\newcommand\myemptypage{
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \newpage
+    }
+
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
+
+\pagestyle{plain}	
+% \usepackage{booktabs}
+% \usepackage{subfigure}
+
+\date{}
+\begin{document}
+    
+	\begin{figure}[t]
+		\parbox[b]{2cm}{
+			\includegraphics[scale=0.2]{校徽.jpg}
+			}
+            \parbox[b]{9cm}{
+                \begin{center}
+                    
+
+				\small \textbf{\quad \quad \quad SOUTHWEST JIAOTONG\quad UNIVERSITY} 
+			\end{center}
+			}
+	\end{figure}
+
+	\begin{center}
+		\quad \\
+		\quad \\
+		\heiti \fontsize{45}{17} 高\quad 数\quad 作\quad 业
+		\vskip 3.5cm
+		\heiti \zihao{2} 知识点总结	
+	\end{center}
+	\vskip 3.5cm
+
+	\begin{quotation}
+		\songti \fontsize{15}{15}
+		\doublespacing
+		\par\setlength\parindent{12em}
+		\quad 
+        
+	    学\hspace{0.61cm} 院：\underline{电气工程学院\quad}
+        
+	    专\hspace{0.61cm} 业：\underline{电子信息工程}
+        
+	    学生姓名：\underline{\qquad MG\qquad }
+        
+	    学\hspace{0.61cm} 号：\underline{\quad 2024111878\quad}
+
+	    指导教师：\underline{\qquad 陈桂玲 \qquad}
+		\vskip 2cm
+		\centering
+		2023年12月24日
+		
+        \centering
+        \LaTeX
+	\end{quotation}
+
+	\newpage
+	\myemptypage
+
+    \tableofcontents
+
+    \newpage
+	\myemptypage
+
+\section{摘要}
+临近期末，陈桂林老师发布高数论文————知识点总结（第四章至第七章前三节）期末大作业。学生认为数学的解题思路是活的，对应不同题目有不同思路，同一道题目亦有不同思路，然而针对题目采取知识点的总结会导致本论文内容过多，故本论文决定采取对书上的定义定理以及一些方法进行汇总，方便期末复习时对定义定理进一步加深印象。最后决定采用\LaTeX 的形式完成论文也是对\LaTeX 写作能力的一次锻炼。
+\vskip 2cm
+
+\section{不定积分}
+\vskip 2cm
+\subsection{不定积分的概念与性质}
+\vskip 1cm
+\subsubsection{原函数与不定积分的概念}
+\paragraph{定理4.1 （原函数存在定理）} 若函数f(x)在区间I上连续，则在区间I上存在可导函数F(x),使得对任意一x$ \in $I都有F'(x)=f(x).
+\newline
+简单来说：\textbf{连续函数一定存在原函数}.
+
+\paragraph{定理4.2 （原函数之间的关系定理）} 如果函数f(x)在区间I上存在原函数，那么其任意两个原函数之间只相差一个常数项.
+
+\paragraph{定义4.2 （不定积分的定义）} 函数f（x）在区间I上的全体原函数所形成的函数族称为f（x）在区间I上的\textbf{不定积分} ,记作 $\int $ f(x)dx.其中记号“$\int $”称为\textbf{积分号}，f（x）称为\textbf{被积函数}，f(x)dx称为\textbf{被积表达式} ,x称为\textbf{积分变量} ，C称为\textbf{积分常数}.
+
+\vskip 2cm
+\subsubsection{不定积分的性质}
+\vskip 1cm
+\paragraph{定理4.3 （不定积分的定义）}
+\begin{enumerate}
+    \item[1.]微分运算与积分运算互为逆运算. \begin{enumerate}
+        \item [(1)][$\int $f(x)dx]'=f(s) 或d[$\int $f(x)dx]=f(x)dx.
+        \item [(2)]$\int $F'(x)dx=F(x)+C或$\int $dF(x)=F(x)+C;特别地，有$\int $dx=x+C.
+    \end{enumerate}
+    \item[2.]被积函数中不为零的常数因子可以移到积分号的前面，即
+    \begin{center}
+        $\int $ kf(x)dx=k$\int $f(x)dx(k为非零常数).
+    \end{center}
+    \item[3.]两个函数的和（或差）的不定积分等于各个函数的不定积分的和（或差），即
+    \begin{center}
+        $\int $ [f(x)±g(x)]dx=$\int $f(x)dx + $\int $g(x)dx.
+    \end{center}
+
+\end{enumerate}
+
+
+
+\subsection{换元积分法}
+\vskip 1cm
+\subsubsection{第一换元积分法}
+\paragraph{定理4.4(第一类换元积分法)}设$\int $f(u)du=F(u)+C. 如果u=$\varphi $具有连续导数，那么
+\begin{center}
+    $\int $f($\varphi $(x))$\varphi $'(x)dx=F($\varphi $(x))+C.
+\end{center}
+
+\vskip 1cm
+\subsubsection{第二换元积分法}
+\paragraph{定理4.5（第二类换元积分法）}设y=f(x)，f=$\varphi $(t)及x'=$\varphi $'(t)均为连续函数，且$\varphi $'（t）$\neq $0,并设t=$\varphi _{}^{-1}$(x)为x=$\varphi $(t)的反函数，若F(t)是f($\varphi $(t))$\varphi $'(t)的一个原函数，则
+\begin{center}
+    $\int $f(x)dx=$\int $f($\varphi $(t))$\varphi $'(t)dt=F(t)+C=F($\varphi _{}^{-1}$(t))+C.
+
+\end{center}
+
+\vskip 1cm
+\subsection{分部积分法}
+\vskip 1cm
+\paragraph{定理4.6（分部积分公式）}设函数u=u(x),v=v(x)的导函数连续，则
+\begin{center}
+    $\int $udv=uv-$\int $vdu或者$\int $uv'dx=uv-$\int $vu'dx
+\end{center}
+
+\vskip 1cm
+\subsection{有理函数的不定积分}
+\vskip 1cm
+\subsubsection{有理函数的不定积分}
+\paragraph{定义4.3(有理函数的定义)}形如
+\begin{center}
+    $\frac{P(x)}{Q(x)}$=$\frac{a_{0}^{} x_{}^{m} +a_{1}^{} x_{}^{m-1} +\dots +a_{m}^{} }{b_{0}^{} x_{}^{n} +b_{1}^{} x_{}^{n-1} +\dots +b_{n}^{} }$
+\end{center}
+(其中n,m为正整数,$a_{0}^{}$ ,$a_{1}^{}$ ,\dots ,$a_{m}^{}$ 及$b_{0}^{} $,$b_{1}^{}$ ,\dots ,$b_{n}^{} $为实常数，且$a_{0}^{} $≠0,$b_{0}^{} $≠0)
+\newline
+的函数称为\textbf{有理函数}(也称为\textbf{有理分式}).当n>m时，称$\frac{P(x)}{Q(x)}$ 为\textbf{真分式}；当n$\leq $m时，称$\frac{P(x)}{Q(x)}$ 为\textbf{假分式}.
+		
+\paragraph{推论}对于真分式$\frac{P(x)}{Q(x)}$可以展开成如下的求和表达式：
+
+\begin{equation}
+	\frac{P(x)}{Q(x)}=\sum_{j=1}^{l} \Big(\sum_{k=1}^{k_{j}} \frac{a_{jk}^{}}{(x-x_{j}^{})_{}^{k}} \Big)+\sum_{j=1}^{n} \Big(\sum_{k=1}^{m_{j}} \frac{b_{jk}^{}x+c_{jk}^{}}{({x_{}^{2}+p_{j}^{}x+q_{j}^{}})^{k}} \Big)
+\end{equation}
+其中$a_{jk}^{}$,$b_{jk}^{}$,$c_{jk}^{}$是唯一确定的实数，而
+\begin{equation}
+	Q(x)=(x-x_{1}^{})_{}^{k1}\dots (x-x_{l}^{})_{}^{kl}(x_{}^{2}-p_{1}^{}x+q_{1}^{})_{}^{m1}\dots (x_{}^{2}-p_{n}^{}x+q_{n}^{})_{}^{m_{n}^{}}
+\end{equation}
+
+\newpage
+\section{定积分}
+\vskip 2cm
+\subsection{定积分的概念与性质}
+\vskip 1cm
+\subsubsection{定积分的概念}
+\paragraph{定理5.1（函数可积的充分条件）}
+\begin{enumerate}
+	\item [1.]若函数f(x)在闭区间[a,b]上连续，则f(x)在[a,b]上可积.
+	\item [2.]若函数f(x)在闭区间[a,b]上除去有限多个间断点外处处连续，且在[a,b]上有界，则f(x)在[a,b]上可积.
+	\item [3.]若函数f(x)在闭区间[a,b]上有界且单调，则f（x）在[a,b]上可积.
+\end{enumerate}
+
+
+\paragraph{定理5.2（定积分的性质）}
+\begin{enumerate}
+	\item [1.]\textbf{几何度量性质：}如果在区间[a,b]上f(x)$\equiv $1,那么
+	\begin{equation}
+		\int_{a}^{b}1dx=\int_{a}^{b}f(x)dx=b-a.
+	\end{equation}
+	\item [2.]\textbf{线性性质：}设$k_{1}^{}$,$k_{2}^{}$均为常数，则
+	\begin{equation}
+		\int_{a}^{b}[k_{1}^{}f(x)+k_{2}^{}g(x)]dx=k_{1}^{}\int_{a}^{b}f(x)dx+k_{2}^{}\int_{a}^{b}g(x)dx
+	\end{equation}
+	\item [3.]\textbf{积分区间的可加性.}
+	\item [4.]\textbf{保号性：}如果在区间[a,b]上恒有f(x)$\geq$ 0,那么$\int _{a}^{b}f(x)dx\geq $0.
+	\item [5.]\textbf{估值定理}设M和m分别是函数f(x)在区间[a,b]上的最大值和最小值，则
+	\begin{equation}
+		m(b-a)\leq \int _{a}^{b}f(x)dx\leq M(b-a).
+	\end{equation}
+	\item [6.]\textbf{积分中值定理：}如果函数f(x)在区间[a,b]上连续，那么在[a,b]上至少存在一点$\xi$,使得下式成立：
+	\begin{equation}
+		\int _{a}^{b}f(x)dx=f(\xi)(b-a).
+	\end{equation}
+\end{enumerate}
+
+\paragraph{推论1（单调性）}如果在区间[a,b]上恒有f(x)$\leq$g(x),那么
+\begin{equation}
+	\int_{a}^{b}f(x)dx\leq \int _{a}^{b}g(x)dx.
+\end{equation} 
+
+\paragraph{推论2（绝对值不等式）}
+\begin{equation}
+	\left|\int_{a}^{b}f(x)dx\right|\leq \int _{a}^{b}\left|f(x)\right|dx(a \textless b).
+\end{equation} 
+
+\vskip 1cm
+\subsection{微积分基本公式}
+\subsubsection{积分上限函数及其导数}
+\paragraph{定理5.3（积分上限函数的导数公式）}若函数f(x)在区间[a,b]上连续，则积分上限函数$\phi$(x)=$\int_{a}^{x}$f(t)dt在[a,b]上可导，并且它的导数
+\begin{equation}
+	\phi'(x)=\frac{d}{dx}\int _{a}^{x}f(t)dt=f(x)(a\leq x\leq b).
+\end{equation}
+
+\subsubsection{微积分基本定理}
+\paragraph{定理5.4（微积分基本定理）}设函数f(x)在区间[a,b]上连续，若函数F(x)是f(x)在区间[a,b]上的一个原函数，则
+\begin{equation}
+	\int_{a}^{b}f(x)dx=F(b)-F(a).
+\end{equation}
+
+\vskip 2cm
+\subsection{定积分的换元积分法和分部积分法}
+\vskip 1cm
+\subsubsection{定积分的换元积分法}
+\paragraph{定理5.7（定积分的换元积分法）}设函数y=f(x)在区间[a,b]上连续，函数x=$\phi $(t)满足下列条件：
+\begin{enumerate}
+	\item[(1)]$\phi $($\alpha$)=a,$\phi $($\beta $)=b;
+	\item[(2)]x=$\phi$(t)在[$\alpha $,$\beta $](或[$\beta $,$\alpha $])上具有连续导数，且其值域$R_{\phi }^{}$=[a,b],则有
+	\begin{equation}
+		\int_{a}^{b}f(x)dx=\int_{\alpha}^{\beta}f(\phi (t))\phi '(t)dt.(\textbf{换元积分公式})
+	\end{equation} 
+\end{enumerate}
+\paragraph{注：}“换元必换限”
+
+\subsubsection{定积分的分部积分法}
+\begin{equation}
+	\int _{a}^{b}u'vdx=[uv]_{a}^{b}-\int _{a}^{b}uv'dx.
+\end{equation}
+\paragraph{注：}“边积边代限”
+
+\vskip 1cm
+\subsection{反常积分}
+\subsubsection{无穷区间上的反常积分}
+\paragraph{定义5.2（无穷区间上的反常积分的敛散性）}无穷区间\textbf{连续},存在积分极限，则反常积分\textbf{收敛},否则\textbf{发散}.
+\subsubsection{无界区间上的反常积分}
+\paragraph{瑕点}如果函数y=f(x)在点a的任一邻域内都无界，则点a称为y=f(x)的\textbf{瑕点（奇点）}，也称为\textbf{无穷间断点}.
+\paragraph{定义5.3（无界函数的反常积分的敛散性）}对于无界函数，在其瑕点邻域内，若存在积分极限，则反常积分收敛，否则发散.
+\subsubsection{反常积分敛散性的判别法}
+\paragraph{定理5.8（无穷区间上的反常积分的直接比较判别法）}设函数f和g在区间[a,+$\infty$)上连续，且对所有的x$\geq $a,有0$\leq $f(x)$leq $g(x).
+\begin{enumerate}
+	\item [1.]若$\int _{a}^{+\infty}$g(x)dx收敛，则$\int _{a}^{+\infty }$f(x)dx收敛.
+	\item [2.]若$\int _{a}^{+\infty}$f(x)dx发散，则$\int _{a}^{+\infty }$g(x)dx发散.
+\end{enumerate}
+
+\subsubsection{反常积分的Cauchy主值}
+对于在瑕点邻域不可积分的无界函数，可以对其积分值赋予Cauchy主值的定义，用符号\textbf{V.P.“Valeur principale"}表示.即，在这种情况下，通常说\textbf{反常积分在主值的意义下存在}.
+
+\section{定积分的应用}
+\subsection{几个概念}
+\begin{enumerate}
+	\item [1.]面积.
+	\item [2.]体积.
+	\item [3.]弧长.
+	\item [4.]曲率.
+\end{enumerate}
+\paragraph{注：}具体概念不展开论述.
+\subsection{几种方法}
+\begin{enumerate}
+	\item [1.]定积分的微元法（定义法）.
+	\item [2.]求面积的矩形法，求面积的柱壳法、截面法.
+	\item [3.]不同坐标系下的积分（直角坐标，极坐标，复平面）.
+\end{enumerate}
+\paragraph{注：}具体方法不展开论述.
+
+
+\newpage
+\section{微分方程}
+\subsection{微分方程的几种类型}
+\paragraph{变量可分离微分方程}对于以下形式的微分方程：
+\begin{equation}
+	y'=f(x,y) \quad \text {或} \quad \frac{dy}{dx}=f(x,y).
+\end{equation}
+可以写成以下形式:
+\begin{equation}
+	P(x,y)dx+Q(x,y)dy=0.
+\end{equation}
+\vskip 1cm
+\paragraph{齐次方程}若一节微分方程可化为：
+\begin{equation}
+	\frac{dy}{dx}=\phi(\frac{y}{x}).
+\end{equation}
+的形式，则这种方程为\textbf{齐次方程}.
+\vskip 1cm
+\paragraph{伯努利方程}方程
+\begin{equation}
+	\frac{dy}{dx}+P(x)y=Q(x)y'',(n\neq 0,1)
+\end{equation}
+称为\textbf{伯努利(Bernoulli)方程}.
+
+\subsection{解微分方程的几种方法}
+\paragraph{两边对称积分法}对于形如f(x)dx=g(y)dy的微分方程，可以两边同时进行不定积分，得到该微分方程的解.
+\paragraph{一阶线性微分方程的公式法}对于形如y'+P(x)y=Q(x)的一阶线性微分方程，有如下通解：
+\begin{equation}
+	y=Ce_{}^{-\int P(x)dx}+e_{}^{-\int P(x)dx}\int Q(x)e_{}^{\int P(x)dx}dx.
+\end{equation}
+\paragraph{注：}推导过程（\textbf{常数变易法}）在此不做阐述.
+
+\newpage
+\section{结语}
+数山有路勤为径，学海无涯苦作舟.
+
+
+
+
+
+
+
+\end{document}
